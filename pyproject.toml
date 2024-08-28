@@ -1,0 +1,23 @@
+[project]
+name = "micro"
+version = "0.1.0"
+description = "Micro is a microservice framework for Python pdf creations."
+authors = [
+    {name = "Madeeha-Anjum", email = "maadeeeehaa@gmail.com"},
+]
+dependencies = [
+    "fastapi[standard]>=0.112.1",
+    "uvicorn[standard]>=0.30.6",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+start = "fastapi run 'src/micro/main.py' --port 8000"
+dev = "fastapi dev 'src/micro/main.py' --port 8000"
+dc-up = "docker-compose up"

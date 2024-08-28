@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    command: fastapi run 'src/micro/main.py' --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app # Mount the current directory to the container
+      - /app/.venv # Mount the virtual environment to the container as a unonomous volume
