@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    command: fastapi run 'src/micro/main.py' --port 8000
+    command: fastapi run 'src/micro/main.py' --port 8000 --reload
     ports:
       - "8000:8000"
     volumes:
